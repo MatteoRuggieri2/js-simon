@@ -9,18 +9,26 @@
 //   da indovinare sono stati individuati.
 
 
-
+const casualNumberArray = [];
 
 // Visualizzo 5 alert con numeri da 1 a 100.
 for ( let i = 0; i < 5; i++ ) {
     casualNumber = Math.floor(Math.random() * 100) + 1
+    casualNumberArray.push(casualNumber);
     alert(`Numero: ${casualNumber}`)
 }
 
+console.log('casualNumberArray: ', casualNumberArray)
+
 // Dopo i 30 secondi , l'utente inserisce un numero alla volta attraverso il prompt
+const userNumberArray = [];
+setTimeout(function() {
+    for ( let i = 0; i < 5; i++ ) {
+        userNumberArray.push(parseInt(prompt('Dimmi un numero che ricordi')));
+    }
+}, 2000)
+
+console.log('userNumberArray: ', userNumberArray)
 
 
 // stampo successivamente quanti numeri e quali ha indovinato l'utente.
-
-
-
