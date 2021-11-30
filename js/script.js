@@ -18,17 +18,29 @@ for ( let i = 0; i < 5; i++ ) {
     alert(`Numero: ${casualNumber}`)
 }
 
-console.log('casualNumberArray: ', casualNumberArray)
+console.log('casualNumberArray: ', casualNumberArray);
 
 // Dopo i 30 secondi , l'utente inserisce un numero alla volta attraverso il prompt
 const userNumberArray = [];
+const guessNumbers = [];
 setTimeout(function() {
+
     for ( let i = 0; i < 5; i++ ) {
-        userNumberArray.push(parseInt(prompt('Dimmi un numero che ricordi')));
+        let userNumber = parseInt(prompt('Dimmi un numero che ricordi'));
+        userNumberArray.push(userNumber);
+
+        if( casualNumberArray.includes(userNumber) ) {
+            guessNumbers.push(userNumber);
+        }
     }
+
+    // stampo successivamente quanti numeri e quali ha indovinato l'utente.
+    alert(`
+    I numeri che hai indovinato sono: ${guessNumbers}
+    Hai indovinato ${guessNumbers.length} numeri.
+    `)
+
 }, 2000)
 
-console.log('userNumberArray: ', userNumberArray)
-
-
-// stampo successivamente quanti numeri e quali ha indovinato l'utente.
+console.log('userNumberArray: ', userNumberArray);
+console.log('guessNumbers: ', guessNumbers);
