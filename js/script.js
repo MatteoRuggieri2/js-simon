@@ -11,11 +11,13 @@
 
 const casualNumberArray = [];
 
-// Visualizzo 5 alert con numeri da 1 a 100.
-for ( let i = 0; i < 5; i++ ) {
+// Visualizzo 5 alert con numeri da 1 a 100 non duplicati.
+while(casualNumberArray.length < 5) {
     let casualNumber = Math.floor(Math.random() * 100) + 1
-    casualNumberArray.push(casualNumber);
-    alert(`Numero: ${casualNumber}`)
+    if(!casualNumberArray.includes(casualNumber)) {
+        casualNumberArray.push(casualNumber);
+        alert(`Numero: ${casualNumber}`)
+    }
 }
 
 // Dopo i 30 secondi , l'utente inserisce un numero alla volta attraverso il prompt
